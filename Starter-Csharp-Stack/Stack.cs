@@ -10,17 +10,23 @@ namespace Starter_Csharp_Stack
         // List's makes this program quit easy
         List<T> list = new List<T>();
        
-       void Push(T obj)
+       public void Push(T obj)
         {
             list.Add(obj);
         }
-        void Flush()
+        public void Flush()
         {
-            list.RemoveRange(0, list.Count);
+            int count = list.Count;
+            if (count > 0)
+            {
+                list.RemoveRange(0, count - 1);
+            }
         }
-        T Get(int index)
+        public T Pull()
         {
-            return list[index];
+            T lastObj = list[list.Count -1];
+            list.RemoveAt(list.Count -1);
+            return lastObj;
         }
        
     }

@@ -9,31 +9,42 @@ namespace Starter_Csharp_Stack
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to my Little Stack Simulator \n Please choose a Type");
-            string type = Console.ReadLine();
-            switch(type)
-            {
-                case "int":
-                case "Int":
-                    Stack<int> stack = new Stack<int>();
-                    break;
+            Stack<string> stack = new Stack<string>();
+            string option;
 
-                case "char":
-                case "Char":
-                    Stack<char> stack = new Stack<char>();
-                    break;
-            }
-
-            Console.Clear();
-
-            Console.WriteLine("Options \n P for Push \n F for Flush \n G for Get \n");
-            string option = Console.ReadLine();
-
-            
-
+            Console.WriteLine("Welcome to my Little Stack Simulator \n ");
             Console.ReadLine();
+
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("Options \n P for Push \n F for Flush \n PL for Pull \n E for Exit \n");
+                option = Console.ReadLine();
+                option.ToLower();
+
+                switch (option)
+                {
+                    case "p":
+                        Console.WriteLine("Please enter a String");
+                        stack.Push(Console.ReadLine());
+                        break;
+                    case "f":
+                        stack.Flush();
+                        break;
+                    case "pl":
+                        Console.WriteLine("Last Saved Object in Stack is:");
+                        Console.WriteLine(stack.Pull());
+                        break;
+                }
+
+                Console.WriteLine("Press a Key");
+                Console.ReadLine();
+            } while (option != "e");
+            
         }
+
     }
 }
