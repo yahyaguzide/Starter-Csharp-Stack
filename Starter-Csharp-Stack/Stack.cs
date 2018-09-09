@@ -22,7 +22,7 @@ namespace Starter_Csharp_Stack
                 list.RemoveRange(0, count - 1);
             }
         }
-        public T Pull()
+        public T Pop()
         {
             T lastObj = list[list.Count -1];
             list.RemoveAt(list.Count -1);

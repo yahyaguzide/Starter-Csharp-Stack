@@ -21,7 +21,7 @@ namespace Starter_Csharp_Stack
             do
             {
                 Console.Clear();
-                Console.WriteLine("Options \n P for Push \n F for Flush \n PL for Pull \n E for Exit \n");
+                Console.WriteLine("Options \n P for Push \n F for Flush \n Pp for Pull \n E for Exit \n");
                 option = Console.ReadLine();
                 option.ToLower();
 
@@ -34,9 +34,9 @@ namespace Starter_Csharp_Stack
                     case "f":
                         stack.Flush();
                         break;
-                    case "pl":
+                    case "pp":
                         Console.WriteLine("Last Saved Object in Stack is:");
-                        Console.WriteLine(stack.Pull());
+                        Console.WriteLine(stack.Pop());
                         break;
                 }
 
